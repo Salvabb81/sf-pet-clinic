@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>org.sbrubixquert</groupId>
 	<artifactId>sf-pet-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>sf-pet-clinic</name>
 	<description>Spring Framework Pet Clinic App with MVC</description>
 
@@ -36,7 +36,7 @@
 	
 	<scm>
 		<developerConnection>scm:git:https://github.com/Salvabb81/sf-pet-clinic.git</developerConnection>
-	  <tag>sf-pet-clinic-0.0.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<packaging>pom</packaging>
