@@ -1,14 +1,7 @@
 package org.sbrubixquert.sfpetclinic.services;
 
-import java.util.Set;
-
 import org.sbrubixquert.sfpetclinic.model.Vet;
 
-public interface VetService {
+public interface VetService extends CommonService<Vet, Long> {
 
-	Vet findById(Long id);
-
-	Vet save(Vet vet);
-
-	Set<Vet> finAll();
 }
