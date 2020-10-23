@@ -8,7 +8,7 @@ public interface CommonService<T, ID> {
 
 	T save(T owner);
 
-	Set<T> finAll();
+	Set<T> findAll();
 
 	void delete(T object);
 	
