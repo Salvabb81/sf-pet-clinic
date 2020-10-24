@@ -3,9 +3,9 @@ package org.sbrubixquert.sfpetclinic.services.map;
 import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.Owner;
-import org.sbrubixquert.sfpetclinic.services.CommonService;
+import org.sbrubixquert.sfpetclinic.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CommonService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Owner save(Owner object) {
@@ -30,6 +30,12 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	@Override
 	public void delete(Owner object) {
 		super.delete(object);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

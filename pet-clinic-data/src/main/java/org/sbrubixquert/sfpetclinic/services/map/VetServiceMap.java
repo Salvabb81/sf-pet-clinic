@@ -3,9 +3,9 @@ package org.sbrubixquert.sfpetclinic.services.map;
 import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.Vet;
-import org.sbrubixquert.sfpetclinic.services.CommonService;
+import org.sbrubixquert.sfpetclinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CommonService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
