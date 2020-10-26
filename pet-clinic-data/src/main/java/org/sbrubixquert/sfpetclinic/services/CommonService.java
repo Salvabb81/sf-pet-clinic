@@ -6,7 +6,7 @@ public interface CommonService<T, ID> {
 
 	T findById(ID id);
 
-	T save(T owner);
+	T save(T object);
 
 	Set<T> findAll();
 
