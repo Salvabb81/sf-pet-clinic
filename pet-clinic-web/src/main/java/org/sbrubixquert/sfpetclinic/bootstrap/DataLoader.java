@@ -1,6 +1,9 @@
 package org.sbrubixquert.sfpetclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.sbrubixquert.sfpetclinic.model.Owner;
+import org.sbrubixquert.sfpetclinic.model.Pet;
 import org.sbrubixquert.sfpetclinic.model.PetType;
 import org.sbrubixquert.sfpetclinic.model.Vet;
 import org.sbrubixquert.sfpetclinic.services.OwnerService;
@@ -27,7 +30,7 @@ public class DataLoader implements CommandLineRunner {
 
 		PetType dog = new PetType();
 		dog.setName("Dog");
-		PetType saveddDogPetType = petTypeService.save(dog);
+		PetType savedDogPetType = petTypeService.save(dog);
 		
 		PetType cat = new PetType();
 		cat.setName("Cat");
@@ -36,12 +39,32 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Michael");
 		owner1.setLastName("Weston");
+		owner1.setAddress("221B Baker Street");
+		owner1.setCity("London");
+		owner1.setTelephone("4415647712");
+		
+		Pet michaelsPet = new Pet();
+		michaelsPet.setPetType(savedDogPetType);
+		michaelsPet.setOwner(owner1);
+		michaelsPet.setBirthDate(LocalDate.now());
+		michaelsPet.setName("Watson");
+		owner1.getPets().add(michaelsPet);
 
 		this.ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Fiona");
 		owner2.setLastName("Glenanne");
+		owner2.setAddress("221B Baker Street");
+		owner2.setCity("London");
+		owner2.setTelephone("4415647712");
+		
+		Pet fionasPet = new Pet();
+		fionasPet.setPetType(savedCatPetType);
+		fionasPet.setOwner(owner2);
+		fionasPet.setBirthDate(LocalDate.now());
+		fionasPet.setName("Moriarty");
+		owner2.getPets().add(fionasPet);
 
 		this.ownerService.save(owner2);
 
