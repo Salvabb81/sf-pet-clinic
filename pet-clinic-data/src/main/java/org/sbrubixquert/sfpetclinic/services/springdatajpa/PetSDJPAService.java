@@ -2,14 +2,13 @@ package org.sbrubixquert.sfpetclinic.services.springdatajpa;
 
 import java.util.Set;
 
-import javax.persistence.Entity;
-
 import org.sbrubixquert.sfpetclinic.model.Pet;
 import org.sbrubixquert.sfpetclinic.repositories.PetRepository;
 import org.sbrubixquert.sfpetclinic.services.PetService;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
-@Entity
+@Service
 @Profile("springdatajpa")
 public class PetSDJPAService implements PetService {
 
