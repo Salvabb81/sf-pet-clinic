@@ -1,5 +1,6 @@
 package org.sbrubixquert.sfpetclinic.services.springdatajpa;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.Vet;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Profile("springdatajpa")
 public class VetSDJPAService implements VetService {
 	private final VetRepository vetRepository;
-	
+
 	public VetSDJPAService(VetRepository vetRepository) {
 		this.vetRepository = vetRepository;
 	}
@@ -30,14 +31,15 @@ public class VetSDJPAService implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
-		;
-		return (Set<Vet>) vetRepository.findAll();
+		Set<Vet> vets = new HashSet<>();
+		vetRepository.findAll().forEach(vets::add);
+		return vets;
 	}
 
 	@Override
 	public void delete(Vet object) {
 		vetRepository.delete(object);
-		
+
 	}
 
 	@Override

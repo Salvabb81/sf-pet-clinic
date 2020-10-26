@@ -4,9 +4,11 @@ import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.Visit;
 import org.sbrubixquert.sfpetclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
 
 	@Override

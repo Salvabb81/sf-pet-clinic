@@ -1,5 +1,6 @@
 package org.sbrubixquert.sfpetclinic.services.springdatajpa;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.PetType;
@@ -30,7 +31,9 @@ public class PetTypeSDJPAService implements PetTypeService {
 
 	@Override
 	public Set<PetType> findAll() {
-		return (Set<PetType>) petTypeRepository.findAll();
+		Set<PetType> types = new HashSet<>();
+		petTypeRepository.findAll().forEach(types::add);
+		return types;
 	}
 
 	@Override

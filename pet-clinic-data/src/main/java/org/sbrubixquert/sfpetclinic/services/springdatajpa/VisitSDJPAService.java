@@ -1,5 +1,6 @@
 package org.sbrubixquert.sfpetclinic.services.springdatajpa;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.Visit;
@@ -30,7 +31,9 @@ public class VisitSDJPAService implements VisitService {
 
 	@Override
 	public Set<Visit> findAll() {
-		return (Set<Visit>) visitRepository.findAll();
+		Set<Visit> visits = new HashSet<>();
+		visitRepository.findAll().forEach(visits::add);
+		return visits;
 	}
 
 	@Override

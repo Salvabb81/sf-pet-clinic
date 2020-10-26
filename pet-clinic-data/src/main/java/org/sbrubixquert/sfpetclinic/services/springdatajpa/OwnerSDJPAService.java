@@ -1,5 +1,6 @@
 package org.sbrubixquert.sfpetclinic.services.springdatajpa;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.Owner;
@@ -38,7 +39,9 @@ public class OwnerSDJPAService implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {
-		return (Set<Owner>) ownerRepository.findAll();
+		Set<Owner> owners = new HashSet<>();
+		ownerRepository.findAll().forEach(owners::add);
+		return owners;
 	}
 
 	@Override

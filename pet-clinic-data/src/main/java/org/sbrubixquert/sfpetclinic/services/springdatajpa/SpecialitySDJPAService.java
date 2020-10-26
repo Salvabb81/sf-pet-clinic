@@ -1,5 +1,6 @@
 package org.sbrubixquert.sfpetclinic.services.springdatajpa;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.Speciality;
@@ -30,7 +31,9 @@ public class SpecialitySDJPAService implements SpecialityService {
 
 	@Override
 	public Set<Speciality> findAll() {
-		return (Set<Speciality>) specialityRepository.findAll();
+		Set<Speciality> specialities = new HashSet<>();
+		specialityRepository.findAll().forEach(specialities::add);
+		return specialities;
 	}
 
 	@Override

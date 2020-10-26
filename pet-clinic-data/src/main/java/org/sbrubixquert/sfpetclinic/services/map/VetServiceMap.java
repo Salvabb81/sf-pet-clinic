@@ -6,9 +6,11 @@ import org.sbrubixquert.sfpetclinic.model.Speciality;
 import org.sbrubixquert.sfpetclinic.model.Vet;
 import org.sbrubixquert.sfpetclinic.services.SpecialityService;
 import org.sbrubixquert.sfpetclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	private final SpecialityService specialityService;

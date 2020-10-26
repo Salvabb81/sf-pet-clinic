@@ -7,9 +7,11 @@ import org.sbrubixquert.sfpetclinic.model.Pet;
 import org.sbrubixquert.sfpetclinic.services.OwnerService;
 import org.sbrubixquert.sfpetclinic.services.PetService;
 import org.sbrubixquert.sfpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;
