@@ -5,12 +5,13 @@ import java.util.Set;
 import org.sbrubixquert.sfpetclinic.model.Vet;
 import org.sbrubixquert.sfpetclinic.repositories.VetRepository;
 import org.sbrubixquert.sfpetclinic.services.CommonService;
+import org.sbrubixquert.sfpetclinic.services.VetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
 @Profile("springdatajpa")
-public class VetSDJPAService implements CommonService<Vet, Long> {
+public class VetSDJPAService implements VetService {
 	private final VetRepository vetRepository;
 	
 	public VetSDJPAService(VetRepository vetRepository) {

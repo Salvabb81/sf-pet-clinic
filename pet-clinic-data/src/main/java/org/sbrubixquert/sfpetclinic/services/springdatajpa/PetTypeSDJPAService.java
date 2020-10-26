@@ -4,13 +4,13 @@ import java.util.Set;
 
 import org.sbrubixquert.sfpetclinic.model.PetType;
 import org.sbrubixquert.sfpetclinic.repositories.PetTypeRepository;
-import org.sbrubixquert.sfpetclinic.services.CommonService;
+import org.sbrubixquert.sfpetclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
 @Profile("springdatajpa")
-public class PetTypeSDJPAService implements CommonService<PetType, Long> {
+public class PetTypeSDJPAService implements PetTypeService {
 
 	private final PetTypeRepository petTypeRepository;
 
